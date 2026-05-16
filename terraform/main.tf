@@ -9,14 +9,14 @@ terraform {
 
 provider "docker" {}
 
-resource "docker_image" "todo_app" {
+resource "docker_image" "quote_app" {
   name         = var.image_name
   keep_locally = true
 }
 
-resource "docker_container" "todo_app" {
-  name  = "todo-react-prod"
-  image = docker_image.todo_app.image_id
+resource "docker_container" "quote_app" {
+  name  = "bahar-react-app-prod"
+  image = docker_image.quote_app.image_id
 
   ports {
     internal = 80

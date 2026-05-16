@@ -1,7 +1,7 @@
 variable "image_name" {
   description = "Docker image to deploy"
   type        = string
-  default     = "todo-react-app:latest"
+  default     = "bahar-react-app:latest"
 }
 
 variable "external_port" {
