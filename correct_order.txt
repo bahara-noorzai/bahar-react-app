@@ -1,0 +1,22 @@
+# 1. Build your production Docker image FIRST
+docker build --target production -t bahar-react-app:latest .
+
+# 2. Verify the image exists
+docker images | grep bahar-react-app
+
+# 3. Now go into terraform folder
+cd terraform
+
+# 4. Downloads the Docker provider plugin (~2MB)
+terraform init
+
+# 5. Shows you what WILL happen, makes no changes
+terraform plan
+
+# 6. Actually creates the container
+terraform apply
+# Type "yes" when prompted
+
+# 7. Verify it's running
+docker ps
+# Visit http://localhost:8080
